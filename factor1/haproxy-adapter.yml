@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: haproxy-adapter
+spec:
+  containers:
+  - name: haproxy
+    image: etiennecoutaud/haproxy:demo
+    ports:
+    - containerPort: 80
+  - name: metrics-adapter
+    image: etiennecoutaud/metrics-adapter:demo
+    ports:
+    - containerPort: 9101
