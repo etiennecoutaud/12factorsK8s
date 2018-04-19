@@ -5,3 +5,4 @@ This repository contains all code for demonstration given during [devoxx 2018 Pa
 |Fact|Description|
 |-|-|
 |[factor 1](./factor1)| 1 pod = 1 ou n containers |
+|[factor 2](./factor2)| Labels everywhere |
