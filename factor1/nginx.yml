@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: simple-nginx
-  namespace: default
+  namespace: factor1
 spec:
   containers:
   - name: nginx

@@ -3,6 +3,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: haproxy-adapter
+  namespace: factor1
 spec:
   containers:
   - name: haproxy
