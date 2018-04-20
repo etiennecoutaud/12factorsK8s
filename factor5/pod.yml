@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  namespace: factor5
+spec:
+  volumes:
+  - name: nginx-config
+    configMap:
+      name: config-1
+  containers:
+  - name: nginx
+    image: nginx:alpine
+    volumeMounts:
+    - name: nginx-config
+      mountPath: /config
+    env:
+    - name: ENV_VAR_NGINX
+      valueFrom:
+        configMapKeyRef:
+          name: config-2
+          key: nginx.env1
+    - name: ENV_VAR_SECRET_USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: config-3
+          key: username
+    - name: ENV_VAR_SECRET_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: config-3
+          key: password

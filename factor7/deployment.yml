@@ -1,9 +1,11 @@
+---
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: simple-nginx
+  name: nginx-deploy
+  namespace: factor7
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: nginx
@@ -14,4 +16,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:alpine
+        #image: nginx:1.12.2-alpine
+        image: nginx:1.13.11-alpine
+        imagePullPolicy: Always

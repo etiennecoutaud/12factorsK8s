@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx
+  namespace: factor11
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      volumes:
+      - name: persistent-storage
+        persistentVolumeClaim:
+          claimName: mystorage
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        volumeMounts:
+          - name: persistent-storage
+            mountPath: /data

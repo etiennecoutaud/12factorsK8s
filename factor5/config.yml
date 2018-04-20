@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-1
+  namespace: factor5
+data:
+  nginx.properties: |-
+    config1=value1
+    config2=value2
+    config3=value3
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-2
+  namespace: factor5
+data:
+  nginx.env1: myEnv1Value
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: config-3
+  namespace: factor5
+data:
+  type: Opaque
+data:
+  username: YWRtaW4=
+  password: bXlfc2VjdXJlX3Bhc3N3b3Jk
