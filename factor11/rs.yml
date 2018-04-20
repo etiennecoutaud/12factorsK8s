@@ -24,3 +24,5 @@ spec:
         volumeMounts:
           - name: persistent-storage
             mountPath: /data
+      nodeSelector:
+        kubernetes.io/hostname: gke-etc-devoxx2018-default-pool-b53c370f-823j
